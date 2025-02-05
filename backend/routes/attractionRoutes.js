@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const attractionController = require('../controllers/attractionControllers');
+const attractionController = require('../controllers/attractionController');
 
 router.get('/attractions', attractionController.getAllAttractions);
 router.get('/attractions/:name', attractionController.getAttractionByName);
