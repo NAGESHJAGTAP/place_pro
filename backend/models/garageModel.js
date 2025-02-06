@@ -37,8 +37,29 @@ async function addGarage(garageData) {
     return await collection.insertOne(garageData);
 }
 
+// Replace a garage by name
+async function updateGarage(name, updatedData) {
+    const collection = await connectToDatabase();
+    return await collection.replaceOne({ name }, updatedData);
+}
+
+// Update specific fields of a garage
+async function updateGarageFields(name, updatedData) {
+    const collection = await connectToDatabase();
+    return await collection.updateOne({ name }, { $set: updatedData });
+}
+
+// Delete a garage by name
+async function deleteGarage(name) {
+    const collection = await connectToDatabase();
+    return await collection.deleteOne({ name });
+}
+
 module.exports = {
     getAllGarages,
     getGarageByName,
-    addGarage
+    addGarage,
+    updateGarage,
+    updateGarageFields,
+    deleteGarage
 };
