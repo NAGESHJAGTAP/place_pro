@@ -3,7 +3,7 @@ const hospitalRoutes = require('./routes/hospitalRoutes');  // Import the hospit
 const attractionRoutes = require('./routes/attractionRoutes');
 const pharmacyRoutes = require('./routes/pharmacyRoutes'); 
 const garageRoutes = require('./routes/garageRoutes');
-
+const foodShopRoutes = require('./routes/foodShopRoutes');
 
 const app = express();
 app.use(express.json());  // Middleware to parse JSON request body
@@ -13,6 +13,7 @@ app.use('/api', hospitalRoutes);
 app.use('/api', attractionRoutes);
 app.use('/api', pharmacyRoutes);
 app.use('/api', garageRoutes);
+app.use('/api', foodShopRoutes);
 
 const port = 3000;
 app.listen(port, () => {
