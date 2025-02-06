@@ -4,6 +4,8 @@ const attractionRoutes = require('./routes/attractionRoutes');
 const pharmacyRoutes = require('./routes/pharmacyRoutes'); 
 const garageRoutes = require('./routes/garageRoutes');
 const foodShopRoutes = require('./routes/foodShopRoutes');
+const hotelRoutes = require('./routes/hotelRoutes');
+
 
 const app = express();
 app.use(express.json());  // Middleware to parse JSON request body
@@ -14,6 +16,8 @@ app.use('/api', attractionRoutes);
 app.use('/api', pharmacyRoutes);
 app.use('/api', garageRoutes);
 app.use('/api', foodShopRoutes);
+app.use('/api', hotelRoutes);
+
 
 const port = 3000;
 app.listen(port, () => {
