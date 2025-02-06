@@ -37,8 +37,29 @@ async function addFoodShop(foodShopData) {
     return await collection.insertOne(foodShopData);
 }
 
+// Replace a food shop by name
+async function updateFoodShop(name, updatedData) {
+    const collection = await connectToDatabase();
+    return await collection.replaceOne({ name }, updatedData);
+}
+
+// Update specific fields of a food shop
+async function updateFoodShopFields(name, updatedData) {
+    const collection = await connectToDatabase();
+    return await collection.updateOne({ name }, { $set: updatedData });
+}
+
+// Delete a food shop by name
+async function deleteFoodShop(name) {
+    const collection = await connectToDatabase();
+    return await collection.deleteOne({ name });
+}
+
 module.exports = {
     getAllFoodShops,
     getFoodShopByName,
-    addFoodShop
+    addFoodShop,
+    updateFoodShop,
+    updateFoodShopFields,
+    deleteFoodShop
 };
