@@ -5,6 +5,7 @@ const pharmacyRoutes = require('./routes/pharmacyRoutes');
 const garageRoutes = require('./routes/garageRoutes');
 const foodShopRoutes = require('./routes/foodShopRoutes');
 const hotelRoutes = require('./routes/hotelRoutes');
+const restaurantRoutes = require('./routes/restaurantRoutes');
 
 
 const app = express();
@@ -17,7 +18,7 @@ app.use('/api', pharmacyRoutes);
 app.use('/api', garageRoutes);
 app.use('/api', foodShopRoutes);
 app.use('/api', hotelRoutes);
-
+app.use('/api', restaurantRoutes);
 
 const port = 3000;
 app.listen(port, () => {
