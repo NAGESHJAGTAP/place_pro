@@ -21,6 +21,7 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
               onChange={(e) => setSearchQuery(e.target.value)}
             />
             <Search className="absolute right-4 top-2.5 text-gray-400" />
+            
           </div>
         </div>
 
