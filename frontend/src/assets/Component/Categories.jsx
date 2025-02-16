@@ -1,11 +1,11 @@
-// src/components/categories.js
+
 const categories = [
     {
       title: 'Hospital',
       images: ["https://thumbs.dreamstime.com/z/modern-hospital-building-close-up-view-59693685.jpg", "https://i.pinimg.com/originals/eb/2f/95/eb2f955cc1ba643c0d3a9e68543a9aa7.jpg", "https://sdk-image2.s3.ap-south-1.amazonaws.com/small_Sarvodaya_Building_New_Image_final_8d5554a560.jpg", "https://media.gettyimages.com/id/173799627/photo/study-of-architectural-form-05.jpg?s=612x612&w=gi&k=20&c=Hmpwj_jsuDdp2IjnuR6fgAw9l06R1HjPzh3Pf5aMEKc="],
-      description: 'Find nearby hospitals and emergency care centers'
-    },
-      
+      description: 'Find nearby hospitals and emergency care centers',
+      explore: 'Explore Hospitals'
+    }, 
     {
         title: 'Medicals',
         images: ["https://media.istockphoto.com/id/1299847050/photo/pharmacy-with-a-people-wearing-a-mask-during-pandemic-covid-19.jpg?s=612x612&w=0&k=20&c=GxBR1rUN4D8ujE_tlo78n6EU4J6rjc6h5EifRIvps8Y=", "https://img.freepik.com/premium-photo/pharmacy-storefront-exterior_1234738-320429.jpg", "https://media.istockphoto.com/id/1326842116/photo/pharmacy-on-nissi-avenue-in-ayia-napa-cyprus.jpg?s=612x612&w=0&k=20&c=XdyRyodnhqfb2Q1UBqoXlIXgtbrsOea72DOAeULRgQ4=", "https://media.istockphoto.com/id/1299847050/photo/pharmacy-with-a-people-wearing-a-mask-during-pandemic-covid-19.jpg?s=612x612&w=0&k=20&c=GxBR1rUN4D8ujE_tlo78n6EU4J6rjc6h5EifRIvps8Y="],
@@ -28,7 +28,7 @@ const categories = [
       },
       {
         title: 'Restaurants',
-        images: [" https://i.pinimg.com/736x/4d/af/aa/4dafaab409cd3a3f43beca2c60f7fb66.jpg", "https://www.milagrocorp.com/wp-content/uploads/2021/11/Maintaining-Your-Restaurants-Exterior.webp", "https://images.nanawall.com/blog/2023-06/Benefits_of_Outdoor_Seating_Blog-1.jpg?auto=format&sharp=20&fit=max", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_dYIgcrRO5C5KcFlhvJl6QPckupkFSQq1FA&s"],
+        images: ["https://www.milagrocorp.com/wp-content/uploads/2021/11/Maintaining-Your-Restaurants-Exterior.webp", "https://images.nanawall.com/blog/2023-06/Benefits_of_Outdoor_Seating_Blog-1.jpg?auto=format&sharp=20&fit=max"," https://i.pinimg.com/736x/4d/af/aa/4dafaab409cd3a3f43beca2c60f7fb66.jpg", "https://www.milagrocorp.com/wp-content/uploads/2021/11/Maintaining-Your-Restaurants-Exterior.webp", "https://images.nanawall.com/blog/2023-06/Benefits_of_Outdoor_Seating_Blog-1.jpg?auto=format&sharp=20&fit=max", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_dYIgcrRO5C5KcFlhvJl6QPckupkFSQq1FA&s"],
         description: 'Best dining experiences in town'
       },
       {
@@ -38,17 +38,13 @@ const categories = [
       },
       {
         title: 'Events',
-        images: ["https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_640.jpg", "https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_640.jpg", "https://media.licdn.com/dms/image/v2/C4D1BAQFAC3o2eHS_vA/company-background_10000/company-background_10000/0/1583354651497/gl_events_cover?e=2147483647&v=beta&t=vYbDxX-8NtFbXXygSIhuJHveB3fzVMLW9BEQJWOf-yU", "https://cdn.prod.website-files.com/61f29c609f84a86e418fbcfb/63ecdf6e6df724eab1f0e8ca_20230215T0132-25bece5c-5ab8-4c33-98c7-60ad2668054b.webp"],
+        images: ["https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_640.jpg", "https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_640.jpg", "https://media.licdn.com/dms/image/v2/C4D1BAQFAC3o2eHS_vA/company-background_10000/company-background_10000/0/1583354651497/gl_events_cover?e=2147483647&v=beta&t=vYbDxX-8NtFbXXygSIhuJHveB3fzVMLW9BEQJWOf-yU", "https://cdn.prod.website-files.com/61f29c609f84a86e418fbcfb/63ecdf6e6df724eab1f0e8ca_20230215T0132-25bece5c-5ab8-4c33-98c7-60ad2668054b.webp", "https://cdn.pixabay.com/photo/2016/11/23/15/48/audience-1853662_640.jpg", "https://media.licdn.com/dms/image/v2/C4D1BAQFAC3o2eHS_vA/company-background_10000/company-background_10000/0/1583354651497/gl_events_cover?e=2147483647&v=beta&t=vYbDxX-8NtFbXXygSIhuJHveB3fzVMLW9BEQJWOf-yU"],
         description: 'Upcoming local events and festivals'
       },
       {
         title: 'Sports',
-        images: [" https://www.pewresearch.org/wp-content/uploads/2024/03/SR_24.03.11_sports_feature-jpg.webp?w=640", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKq0EeZGH2DCjRYLxbwytpcjdLejbVPLfDQQ&s", "https://www.vedantu.com/seo/content-images/27a1bd37-5e70-4e9d-990c-f1a1a06997f1.jpg", "https://cdn5.parksmedia.wdprapps.disney.com/media/espnwwos/home/WWoS_Hero_375x279_Multi.jpg"],
+        images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKq0EeZGH2DCjRYLxbwytpcjdLejbVPLfDQQ&s", "https://www.vedantu.com/seo/content-images/27a1bd37-5e70-4e9d-990c-f1a1a06997f1.jpg"," https://www.pewresearch.org/wp-content/uploads/2024/03/SR_24.03.11_sports_feature-jpg.webp?w=640", "https://cdn5.parksmedia.wdprapps.disney.com/media/espnwwos/home/WWoS_Hero_375x279_Multi.jpg"],
         description: 'Sports facilities and activities'
-      }
-
-
-    
+      }  
   ];
-  
   export default categories;
