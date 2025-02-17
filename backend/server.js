@@ -1,5 +1,8 @@
 const express = require('express');
-const hospitalRoutes = require('./routes/hospitalRoutes');  // Import the hospital routes
+const cors = require('cors');
+
+const { connectDB } = require('./config/db');
+const hospitalRoutes = require('./routes/hospitalRoutes');  
 const attractionRoutes = require('./routes/attractionRoutes');
 const pharmacyRoutes = require('./routes/pharmacyRoutes'); 
 const garageRoutes = require('./routes/garageRoutes');
@@ -8,12 +11,21 @@ const hotelRoutes = require('./routes/hotelRoutes');
 const restaurantRoutes = require('./routes/restaurantRoutes');
 const eventRoutes = require('./routes/eventRoutes');
 const sportRoutes = require('./routes/sportRoutes');
+const userRoutes = require('./routes/userRoutes');
+const { login } = require('./Controllers/loginControllers');
 
 
 const app = express();
-app.use(express.json());  // Middleware to parse JSON request body
+const PORT = 3000;
 
-// Use routes for '/api' path
+// Connect to MongoDB
+connectDB();
+
+// Middlewares
+app.use(cors());
+app.use(express.json());
+
+// Routes
 app.use('/api', hospitalRoutes);  
 app.use('/api', attractionRoutes);
 app.use('/api', pharmacyRoutes);
@@ -23,7 +35,28 @@ app.use('/api', hotelRoutes);
 app.use('/api', restaurantRoutes);
 app.use('/api', eventRoutes)
 app.use('/api', sportRoutes);
-const port = 3000;
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+app.use('/', userRoutes);
+app.use('/', login)
+
+
+
+app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
