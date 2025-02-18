@@ -17,7 +17,55 @@ const hospitals = [
     support: '24/7 Support',
     image: 'https://thumbs.dreamstime.com/b/modern-hospital-exterior-21083584.jpg'
   },
- 
+  {
+    id: 3,
+    name: 'Apollo Healthcare',
+    distance: '1.2 km',
+    support: '24/7 Support',
+    image: 'https://media.gettyimages.com/id/1312706504/photo/modern-hospital-building.jpg?s=612x612&w=gi&k=20&c=StV1gAkbzgp14Us0XAfuIRoWo8iXO7CUwUOlh66Y9S0='
+  },
+  {
+    id: 4,
+    name: 'Regional Medical Center',
+    distance: '1.2 km',
+    support: '24/7 Support',
+    image: 'https://media.istockphoto.com/id/1312706413/photo/modern-hospital-building.jpg?s=612x612&w=0&k=20&c=oUILskmtaPiA711DP53DFhOUvE7pfdNeEK9CfyxlGio='
+  },
+  {
+    id: 5,
+    name: 'Emergency Care Unit',
+    distance: '1.2 km',
+    support: '24/7 Support',
+    image: 'https://t4.ftcdn.net/jpg/03/88/00/37/360_F_388003741_3pDGioOwlLIEr0Af2DaepDlLxc3tgqUZ.jpg'
+  },
+  {
+    id: 6,
+    name: 'Community Hospital',
+    distance: '1.2 km',
+    support: '24/7 Support',
+    image: 'https://episodelife.com/backgrounds/EXT_HOSPITAL_BUILDING_CLOUDY_DAY.jpg'
+  },
+  {
+    id: 7,
+    name: 'St. John Medical',
+    distance: '1.2 km',
+    support: '24/7 Support',
+    image: 'https://media.istockphoto.com/id/182172308/photo/hospital.jpg?s=612x612&w=0&k=20&c=rbCU08kZ5-BNV-yagONOpcF-kFfjLR_3310EHU0EGP8='
+  },
+  {
+    id: 8,
+    name: 'City Health Center',
+    distance: '1.2 km',
+    support: '24/7 Support',
+    image: 'https://media.istockphoto.com/id/993985508/photo/building-with-large-h-sign-for-hospital.jpg?s=612x612&w=0&k=20&c=0K07VYHMEpmKFfhzcGOfmBt9PST05h8ZVddhtsECLMU='
+  },
+  {
+    id: 9,
+    name: 'Modern Care Hospital',
+    distance: '1.2 km',
+    support: '24/7 Support',
+    image: 'https://media.istockphoto.com/id/685808588/photo/urban-skyline-with-hospital-and-office-buildings.jpg?s=612x612&w=0&k=20&c=dh3e9oKcY-NCpQ1-t7h7AcRJjzjqfW9X-gUxsHR7IJ8='
+  }
 ];
 const HospitalFinder = () => {
   const [searchQuery, setSearchQuery] = useState('');
