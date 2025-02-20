@@ -73,7 +73,7 @@ const Home = () => {
                 <h3 className="text-xl font-semibold mb-2">{category.title}</h3>
                 <p className="text-gray-600 mb-4">{category.description}</p>
                 <div className="flex justify-between items-center">
-                  <span className="text-sm text-gray-500">20+ locations</span>
+                  <span className="text-sm text-gray-500">50+ locations</span>
                   <button className="text-orange-500 hover:text-orange-600 transition-colors">
                     Learn more →
                   </button>
