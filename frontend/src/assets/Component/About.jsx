@@ -64,7 +64,19 @@ const About = () => {
         </div>
       </section>
 
-    
+      {/* Call to Action */}
+      <section className="py-10 bg-gradient-to-r from-orange-600 to-orange-500 text-white text-center">
+        <div className="container mx-auto px-4 max-w-3xl">
+          <h2 className="text-3xl font-bold mb-4">Start Exploring with PlacePro!</h2>
+          <p className="text-lg mb-6">Find nearby places effortlessly for your next journey.</p>
+          <a 
+            href="/contact" 
+            className="inline-block bg-white text-orange-500 font-semibold px-6 py-3 rounded-md hover:bg-gray-100 transition-transform hover:-translate-y-2"
+          >
+            Get Started
+          </a>
+        </div>
+      </section>
     </div>
   );
 };
