@@ -121,7 +121,74 @@ const Hospitaldetails = () => {
     ))}
      </div>
 
+       
 
+
+
+
+
+
+
+
+
+
+         {/* Tab Content */}
+  <div className="bg-white shadow-md rounded-lg p-6">
+  {tabValue === 0 && (
+    <div>
+      <h3 className="text-xl font-semibold mb-4">Doctors</h3>
+      {hospitalInfo.doctors.map((doctor, index) => (
+        <div key={index} className="flex items-center mb-3">
+          <User className="w-5 h-5 text-blue-600 mr-3" />
+          <div>
+            <p className="font-medium">{doctor.name}</p>
+            <p className="text-gray-600">
+              Specialty: {doctor.specialty} | Schedule: {doctor.schedule}
+            </p>
+          </div>
+        </div>
+      ))}
+    </div>
+  )}
+
+  {tabValue === 1 && (
+    <div>
+      <h3 className="text-xl font-semibold mb-4">Departments</h3>
+      {hospitalInfo.departments.map((dept, index) => (
+        <div key={index} className="flex items-center mb-2">
+          <Building2 className="w-5 h-5 text-blue-600 mr-3" />
+          <span>{dept}</span>
+        </div>
+      ))}
+    </div>
+  )}
+
+  {tabValue === 2 && (
+    <div>
+      <h3 className="text-xl font-semibold mb-4">Parking & Transport</h3>
+      <div className="mb-4">
+        <h4 className="font-medium mb-2">Parking</h4>
+        <div className="flex items-center">
+          <Car className="w-5 h-5 text-blue-600 mr-3" />
+          <span>
+            {hospitalInfo.parking.visitor} - {hospitalInfo.parking.rates}
+          </span>
+        </div>
+      </div>
+      <div>
+        <h4 className="font-medium mb-2">Public Transport</h4>
+        <div className="flex items-center mb-2">
+          <Bus className="w-5 h-5 text-blue-600 mr-3" />
+          <span>Bus Routes: {hospitalInfo.transport.bus.join(", ")}</span>
+        </div>
+        <div className="flex items-center">
+          <Clock className="w-5 h-5 text-blue-600 mr-3" />
+          <span>Subway Lines: {hospitalInfo.transport.subway.join(", ")}</span>
+        </div>
+      </div>
+    </div>
+  )}
+</div>
 
     
 
