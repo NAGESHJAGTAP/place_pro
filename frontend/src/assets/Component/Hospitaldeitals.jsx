@@ -23,6 +23,37 @@ const Hospitaldetails = () => {
     message: ""
   });
 
+  const hospitalInfo = {
+    name: "Central City Hospital",
+    type: "Multi-Specialty Hospital",
+    address: "123 Medical Center Drive, Manhattan, NY, 10001",
+    phone: "+91 8155814237",
+    emergencyPhone: "+1 (555) 911-0000",
+    email: "contact@centralcityhospital.com",
+    hours: {
+      weekday: "8:00 AM - 9:00 PM",
+      weekend: "9:00 AM - 5:00 PM",
+      emergency: "24/7"
+    },
+    doctors: [
+      { name: "Dr. Sarah Johnson", specialty: "Cardiology", schedule: "Mon-Fri" },
+      { name: "Dr. Michael Chen", specialty: "Orthopedics", schedule: "Mon-Thu" },
+      { name: "Dr. Emily Brown", specialty: "Pediatrics", schedule: "Tue-Sat" }
+    ],
+    departments: [
+      "Emergency Care", "Cardiology", "Orthopedics", "Pediatrics", "Neurology", "Radiology"
+    ],
+    parking: {
+      visitor: "P1 - Main Visitor Parking",
+      emergency: "P2 - Emergency Department Parking",
+      rates: "First hour free, $2/hour thereafter"
+    },
+    transport: {
+      bus: ["B1 - Hospital Express", "B2 - City Loop"],
+      subway: ["Blue Line - Medical Center Station", "Red Line - Central Station"],
+      accessibility: "Wheelchair accessible from all entrances"
+    }
+  };
 
   const handleChangeTab = (newValue) => {
     setTabValue(newValue);
@@ -103,94 +134,86 @@ const Hospitaldetails = () => {
         </div>
       </div>
 
-    
-       {/* Tabs */}
-  <div className="flex justify-center mb-6">
-  {['Doctors', 'Departments', 'Parking & Transport'].map((tab, index) => (
-    <button
-      key={tab}
-      onClick={() => handleChangeTab(index)}
-      className={`px-4 py-2 mx-2 ${
-        tabValue === index 
-          ? 'bg-blue-600 text-white' 
-          : 'bg-gray-200 text-gray-700'
-      } rounded`}
-    >
-      {tab}
-    </button>
-    ))}
-     </div>
+      {/* Tabs */}
+      <div className="flex justify-center mb-6">
+        {['Doctors', 'Departments', 'Parking & Transport'].map((tab, index) => (
+          <button
+            key={tab}
+            onClick={() => handleChangeTab(index)}
+            className={`px-4 py-2 mx-2 ${
+              tabValue === index 
+                ? 'bg-blue-600 text-white' 
+                : 'bg-gray-200 text-gray-700'
+            } rounded`}
+          >
+            {tab}
+          </button>
+        ))}
+      </div>
 
-       
-
-
-
-
-
-
-
-
-
-
-         {/* Tab Content */}
-  <div className="bg-white shadow-md rounded-lg p-6">
-  {tabValue === 0 && (
-    <div>
-      <h3 className="text-xl font-semibold mb-4">Doctors</h3>
-      {hospitalInfo.doctors.map((doctor, index) => (
-        <div key={index} className="flex items-center mb-3">
-          <User className="w-5 h-5 text-blue-600 mr-3" />
+      {/* Tab Content */}
+      <div className="bg-white shadow-md rounded-lg p-6">
+        {tabValue === 0 && (
           <div>
-            <p className="font-medium">{doctor.name}</p>
-            <p className="text-gray-600">
-              Specialty: {doctor.specialty} | Schedule: {doctor.schedule}
-            </p>
+            <h3 className="text-xl font-semibold mb-4">Doctors</h3>
+            {hospitalInfo.doctors.map((doctor, index) => (
+              <div key={index} className="flex items-center mb-3">
+                <User className="w-5 h-5 text-blue-600 mr-3" />
+                <div>
+                  <p className="font-medium">{doctor.name}</p>
+                  <p className="text-gray-600">
+                    Specialty: {doctor.specialty} | Schedule: {doctor.schedule}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div>
-      ))}
-    </div>
-  )}
+        )}
 
-  {tabValue === 1 && (
-    <div>
-      <h3 className="text-xl font-semibold mb-4">Departments</h3>
-      {hospitalInfo.departments.map((dept, index) => (
-        <div key={index} className="flex items-center mb-2">
-          <Building2 className="w-5 h-5 text-blue-600 mr-3" />
-          <span>{dept}</span>
-        </div>
-      ))}
-    </div>
-  )}
+        {tabValue === 1 && (
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Departments</h3>
+            {hospitalInfo.departments.map((dept, index) => (
+              <div key={index} className="flex items-center mb-2">
+                <Building2 className="w-5 h-5 text-blue-600 mr-3" />
+                <span>{dept}</span>
+              </div>
+            ))}
+          </div>
+        )}
 
-  {tabValue === 2 && (
-    <div>
-      <h3 className="text-xl font-semibold mb-4">Parking & Transport</h3>
-      <div className="mb-4">
-        <h4 className="font-medium mb-2">Parking</h4>
-        <div className="flex items-center">
-          <Car className="w-5 h-5 text-blue-600 mr-3" />
-          <span>
-            {hospitalInfo.parking.visitor} - {hospitalInfo.parking.rates}
-          </span>
-        </div>
+        {tabValue === 2 && (
+          <div>
+            <h3 className="text-xl font-semibold mb-4">Parking & Transport</h3>
+            <div className="mb-4">
+              <h4 className="font-medium mb-2">Parking</h4>
+              <div className="flex items-center">
+                <Car className="w-5 h-5 text-blue-600 mr-3" />
+                <span>
+                  {hospitalInfo.parking.visitor} - {hospitalInfo.parking.rates}
+                </span>
+              </div>
+            </div>
+            <div>
+              <h4 className="font-medium mb-2">Public Transport</h4>
+              <div className="flex items-center mb-2">
+                <Bus className="w-5 h-5 text-blue-600 mr-3" />
+                <span>Bus Routes: {hospitalInfo.transport.bus.join(", ")}</span>
+              </div>
+              <div className="flex items-center">
+                <Clock className="w-5 h-5 text-blue-600 mr-3" />
+                <span>Subway Lines: {hospitalInfo.transport.subway.join(", ")}</span>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
-      <div>
-        <h4 className="font-medium mb-2">Public Transport</h4>
-        <div className="flex items-center mb-2">
-          <Bus className="w-5 h-5 text-blue-600 mr-3" />
-          <span>Bus Routes: {hospitalInfo.transport.bus.join(", ")}</span>
-        </div>
-        <div className="flex items-center">
-          <Clock className="w-5 h-5 text-blue-600 mr-3" />
-          <span>Subway Lines: {hospitalInfo.transport.subway.join(", ")}</span>
-        </div>
-      </div>
-    </div>
-  )}
-</div>
 
-    
+   
+      <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-6 flex items-center">
+        <AlertTriangle className="w-6 h-6 mr-3" />
+        <span>For medical emergencies, call: {hospitalInfo.emergencyPhone}</span>
+      </div>
 
       {openContactModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
