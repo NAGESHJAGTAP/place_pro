@@ -104,6 +104,24 @@ const Hospitaldetails = () => {
       </div>
 
     
+       {/* Tabs */}
+  <div className="flex justify-center mb-6">
+  {['Doctors', 'Departments', 'Parking & Transport'].map((tab, index) => (
+    <button
+      key={tab}
+      onClick={() => handleChangeTab(index)}
+      className={`px-4 py-2 mx-2 ${
+        tabValue === index 
+          ? 'bg-blue-600 text-white' 
+          : 'bg-gray-200 text-gray-700'
+      } rounded`}
+    >
+      {tab}
+    </button>
+    ))}
+     </div>
+
+
 
     
 
