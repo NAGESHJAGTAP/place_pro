@@ -45,7 +45,26 @@ const About = () => {
         </div>
       </section>
 
-   
+      {/* Testimonials Section */}
+      <section className="py-10 px-4 md:px-6 lg:px-8 bg-gray-100">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-orange-500 mb-6 text-center">What Travelers Say</h2>
+          <div className="space-y-6 md:space-y-0 md:grid md:grid-cols-2 gap-6">
+            {["PlacePro made finding a hospital so easy!", "We discovered amazing attractions nearby!"]
+              .map((feedback, index) => (
+                <div 
+                  key={index}
+                  className="bg-white p-6 rounded-lg shadow-md hover:-translate-y-2 transition-transform"
+                >
+                  <p className="text-lg italic mb-4">"{feedback}"</p>
+                  <p className="font-bold text-right">- Traveler</p>
+                </div>
+              ))}
+          </div>
+        </div>
+      </section>
+
+    
     </div>
   );
 };
