@@ -1,14 +1,17 @@
-# place_pro
-
-# Figma link
-
-```
-https://www.figma.com/design/dNCCK0JmBqakvn50ivMrkN/HTM-location?node-id=0-1&t=ZptZ4OulDCssIeWT-1
-
-```
 # 🌍 PlacePro
 
 PlacePro is a traveler-friendly web application designed to help users discover nearby locations such as 🏥 hospitals, 💊 pharmacies, 🔧 garages, 🥘 food shops, 🏨 hotels, 🍽️ restaurants, 🎡 attractions, 🎟️ events, and ⚽ sports venues. The platform provides real-time location-based information to make travel more convenient and enjoyable.
+
+
+## Figma link
+````
+https://www.figma.com/design/dNCCK0JmBqakvn50ivMrkN/HTM-location?node-id=0-1&t=ZptZ4OulDCssIeWT-1
+````
+
+## postman documanction link
+````
+https://documenter.getpostman.com/view/39189904/2sAYdbNCxE
+````
 
 ## 🚀 Features
 
