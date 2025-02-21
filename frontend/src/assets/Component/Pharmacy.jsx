@@ -30,7 +30,42 @@ const pharmacies = [
     distance: '1.5 km',
     support: '24/7 Support',
     image: 'https://images.unsplash.com/photo-1589652717406-1c69efaf1ff1'
-  }
+  },
+  {
+    id: 2,
+    name: 'HealthPlus Pharmacy',
+    distance: '1.0 km',
+    support: '24/7 Support',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
+  },
+  {
+    id: 2,
+    name: 'HealthPlus Pharmacy',
+    distance: '1.0 km',
+    support: '24/7 Support',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
+  },
+  {
+    id: 2,
+    name: 'HealthPlus Pharmacy',
+    distance: '1.0 km',
+    support: '24/7 Support',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
+  },
+  {
+    id: 2,
+    name: 'HealthPlus Pharmacy',
+    distance: '1.0 km',
+    support: '24/7 Support',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
+  },
+  {
+    id: 2,
+    name: 'HealthPlus Pharmacy',
+    distance: '1.0 km',
+    support: '24/7 Support',
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
+  },
 ];
 
 const Pharmacy = () => {
