@@ -22,7 +22,7 @@ const pharmacies = [
     name: 'Wellness Drugstore',
     distance: '1.2 km',
     support: '24/7 Support',
-    image: 'https://images.unsplash.com/photo-1608069381915-43fc131f4fe4'
+    image: 'https://images.unsplash.com/photo-1576091160501-bbe57469278b'
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ const pharmacies = [
     name: 'HealthPlus Pharmacy',
     distance: '1.0 km',
     support: '24/7 Support',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
+    image: 'https://images.unsplash.com/photo-1576091160501-bbe57469278b'
   },
   {
     id: 2,
@@ -57,7 +57,7 @@ const pharmacies = [
     name: 'HealthPlus Pharmacy',
     distance: '1.0 km',
     support: '24/7 Support',
-    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
+    image: 'https://images.unsplash.com/photo-1576091160501-bbe57469278b'
   },
   {
     id: 2,
