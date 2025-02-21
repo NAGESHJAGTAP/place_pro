@@ -47,6 +47,7 @@ const Navbar = ({ searchQuery, setSearchQuery }) => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden flex flex-col bg-white shadow-lg p-4">
+          <Link to="/" className="hover:text-orange-500 transition-colors py-2" onClick={toggleMenu}>Home</Link>
           <Link to="/about" className="hover:text-orange-500 transition-colors py-2" onClick={toggleMenu}>About Us</Link>
           <Link to="/contact" className="hover:text-orange-500 transition-colors py-2" onClick={toggleMenu}>Contact Us</Link>
           <Link to="/login" className="bg-orange-500 text-white px-6 py-2 rounded-full hover:bg-orange-600 transition-colors my-2" onClick={toggleMenu}>Log in</Link>
