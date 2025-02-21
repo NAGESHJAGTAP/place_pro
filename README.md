@@ -3,6 +3,20 @@
 PlacePro is a traveler-friendly web application designed to help users discover nearby locations such as 🏥 hospitals, 💊 pharmacies, 🔧 garages, 🥘 food shops, 🏨 hotels, 🍽️ restaurants, 🎡 attractions, 🎟️ events, and ⚽ sports venues. The platform provides real-time location-based information to make travel more convenient and enjoyable.
 
 
+## 🚀 PlacePro – Problem Statement & Solution
+🛑 Problem Statement:
+Travelers often struggle to find essential services like hospitals, pharmacies, garages, food shops, hotels, restaurants, attractions, events, and sports venues in unfamiliar locations. Existing platforms either lack real-time, location-based service recommendations or provide incomplete and unorganized information, leading to frustration and wasted time.
+
+✅ Solution:
+PlacePro is a one-stop platform that helps travelers quickly locate nearby essential services with an intuitive and user-friendly interface. It provides:
+
+📍 Location-based search for hospitals, pharmacies, garages, and more.
+🍽️ Food shop challenges to make dining more engaging.
+🏨 Detailed listings for hotels, restaurants, and attractions.
+🎟️ Event and sports venue recommendations to enhance travel experiences.
+📱 Mobile-friendly and responsive design for easy access on the go.
+
+
 ## Figma link
 ````
 https://www.figma.com/design/dNCCK0JmBqakvn50ivMrkN/HTM-location?node-id=0-1&t=ZptZ4OulDCssIeWT-1
