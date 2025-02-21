@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { MapPin, Search, Phone } from 'lucide-react'; // Import missing icons
 import categories from './Categories';
 
 const Home = () => {
@@ -81,6 +82,35 @@ const Home = () => {
               </div>
             </div>
           ))}
+        </div>
+      </div>
+
+      <div className="bg-orange-50 py-16">
+        <div className="container mx-auto px-4">
+          <h2 className="text-3xl font-bold text-center mb-12">Why Choose PlacePro</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <MapPin className="text-orange-500 w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Local Expertise</h3>
+              <p className="text-gray-600">Discover hidden gems and popular spots recommended by locals</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Search className="text-orange-500 w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Easy Search</h3>
+              <p className="text-gray-600">Find exactly what you need with our powerful search features</p>
+            </div>
+            <div className="bg-white p-8 rounded-xl shadow-lg text-center">
+              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <Phone className="text-orange-500 w-8 h-8" />
+              </div>
+              <h3 className="text-xl font-semibold mb-4">24/7 Support</h3>
+              <p className="text-gray-600">Get assistance anytime with our dedicated support team</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
