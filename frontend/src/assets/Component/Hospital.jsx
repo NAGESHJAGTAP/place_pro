@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
-import { Search, MapPin, Clock, Phone, User } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Search, MapPin, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
 
 const hospitals = [
   {
@@ -67,8 +68,37 @@ const hospitals = [
     image: 'https://media.istockphoto.com/id/685808588/photo/urban-skyline-with-hospital-and-office-buildings.jpg?s=612x612&w=0&k=20&c=dh3e9oKcY-NCpQ1-t7h7AcRJjzjqfW9X-gUxsHR7IJ8='
   }
 ];
+
+
+
 const HospitalFinder = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [location, setLocation] = useState('Find your location...');
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude, longitude } = position.coords;
+          try {
+            const response = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+            );
+            const data = await response.json();
+            setLocation(data.address.city || data.address.village || 'Unknown Location');
+          } catch (error) {
+            setLocation('Location not found');
+          }
+        },
+        () => {
+          setLocation('Location access denied');
+        }
+      );
+    } else {
+      setLocation('Geolocation not supported');
+    }
+  }, []);
+
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="relative h-96">
@@ -80,15 +110,11 @@ const HospitalFinder = () => {
           />
           <div className="absolute inset-0 bg-white/80"></div>
         </div>
-        
         <div className="relative container mx-auto px-4 py-20">
           <h2 className="text-4xl font-bold text-green-700 mb-4">
-            Discover the Best Hospital in [Village/City Name]
+            Discover the Best Hospital in {location}
           </h2>
-          <p className="text-gray-600 mb-8">
-            Find emergency services near you in seconds.
-          </p>
-          
+          <p className="text-gray-600 mb-8">Find emergency services near you in seconds.</p>
           <div className="max-w-2xl">
             <div className="flex items-center bg-white rounded-lg shadow-lg">
               <MapPin className="ml-4 text-orange-500" />
@@ -104,31 +130,30 @@ const HospitalFinder = () => {
         </div>
       </div>
       <div className="container mx-auto px-4 py-12">
-        <h3 className="text-2xl font-bold text-center mb-12">HOSPITAL LOCATION</h3>
-        
+        <div className="flex items-center justify-between mb-12 ml-32">
+          <h3 className="text-2xl font-bold flex-grow text-center">HOSPITAL LOCATION</h3>
+          <Link to="/hospital/addhospital">
+            <button className="px-6 py-2 md:px-8 md:py-3 text-sm md:text-base bg-orange-500 text-white rounded-lg hover:bg-orange-600 transition-colors w-full md:w-auto">
+              Add Hospital
+            </button>
+          </Link>
+        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {hospitals.map((hospital) => (
             <div key={hospital.id} className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <img
-                src={hospital.image}
-                alt={hospital.name}
-                className="w-full h-48 object-cover"
-              />
+              <img src={hospital.image} alt={hospital.name} className="w-full h-48 object-cover" />
               <div className="p-6">
-                <h4 className="font-bold text-lg mb-2">[{hospital.name}]</h4>
+                <h4 className="font-bold text-lg mb-2">{hospital.name}</h4>
                 <div className="flex items-center text-gray-600 mb-2">
                   <MapPin className="w-4 h-4 mr-2" />
-                  <span>{hospital.distance} per away</span>
+                  <span>{hospital.distance} away</span>
                 </div>
                 <div className="flex items-center text-gray-600 mb-4">
                   <Clock className="w-4 h-4 mr-2" />
                   <span>{hospital.support}</span>
                 </div>
                 <button className="w-full bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition-colors">
-                    <Link to="/hospital/viewdetails">
-                    VIEW DETAILS
-                    </Link>
-                  
+                  <Link to="/hospital/viewdetails">VIEW DETAILS</Link>
                 </button>
               </div>
             </div>
