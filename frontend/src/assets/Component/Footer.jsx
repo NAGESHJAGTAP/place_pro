@@ -34,15 +34,24 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
-            <h4 className="font-bold text-lg mb-4">Follow Us</h4>
-            <div className="flex justify-center md:justify-start space-x-4">
-              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-orange-500 transition-colors"><Instagram className="w-5 h-5" /></a>
-              <a href="https://x.com/home?lang=en" className="bg-gray-800 p-2 rounded-full hover:bg-orange-500 transition-colors"><Twitter className="w-5 h-5" /></a>
-              <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-orange-500 transition-colors"><Facebook className="w-5 h-5" /></a>
-              <a href="https://www.linkedin.com/in/nagesh-jagtap-9bb56031a/" className="bg-gray-800 p-2 rounded-full hover:bg-orange-500 transition-colors"><Linkedin className="w-5 h-5" /></a>
-            </div>
-          </div>
+          <div className="text-center md:text-left">
+  <h4 className="font-bold text-lg mb-4">Follow Us</h4>
+  <div className="flex flex-wrap justify-center md:justify-start gap-4">
+    <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-orange-500 transition-colors">
+      <Instagram className="w-6 h-6 md:w-5 md:h-5" />
+    </a>
+    <a href="https://x.com/home?lang=en" className="bg-gray-800 p-2 rounded-full hover:bg-orange-500 transition-colors">
+      <Twitter className="w-6 h-6 md:w-5 md:h-5" />
+    </a>
+    <a href="#" className="bg-gray-800 p-2 rounded-full hover:bg-orange-500 transition-colors">
+      <Facebook className="w-6 h-6 md:w-5 md:h-5" />
+    </a>
+    <a href="https://www.linkedin.com/in/nagesh-jagtap-9bb56031a/" className="bg-gray-800 p-2 rounded-full hover:bg-orange-500 transition-colors">
+      <Linkedin className="w-6 h-6 md:w-5 md:h-5" />
+    </a>
+  </div>
+</div>
+
         </div>
       </div>
     </footer>

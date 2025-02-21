@@ -7,7 +7,7 @@ const categories = [
       explore: 'Explore Hospitals'
     }, 
     {
-        title: 'Medicals',
+        title: 'Pharmacy',
         images: ["https://media.istockphoto.com/id/1299847050/photo/pharmacy-with-a-people-wearing-a-mask-during-pandemic-covid-19.jpg?s=612x612&w=0&k=20&c=GxBR1rUN4D8ujE_tlo78n6EU4J6rjc6h5EifRIvps8Y=", "https://img.freepik.com/premium-photo/pharmacy-storefront-exterior_1234738-320429.jpg", "https://media.istockphoto.com/id/1326842116/photo/pharmacy-on-nissi-avenue-in-ayia-napa-cyprus.jpg?s=612x612&w=0&k=20&c=XdyRyodnhqfb2Q1UBqoXlIXgtbrsOea72DOAeULRgQ4=", "https://media.istockphoto.com/id/1299847050/photo/pharmacy-with-a-people-wearing-a-mask-during-pandemic-covid-19.jpg?s=612x612&w=0&k=20&c=GxBR1rUN4D8ujE_tlo78n6EU4J6rjc6h5EifRIvps8Y="],
         description: 'Local pharmacies and medical stores'
       },
@@ -17,17 +17,17 @@ const categories = [
         description: 'Auto repair and maintenance services'
       },
       {
-        title: 'Shop Location',
+        title: 'FoodShop',
         images: ["https://i.pinimg.com/736x/27/2f/6b/272f6b29382c98e2cdf976337499762c.jpg", "https://c8.alamy.com/comp/ET20F0/jumboking-vada-pav-express-indian-fast-food-veg-restaurant-princess-ET20F0.jpg", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRyIrTJircl697FaQdGmaq_xggKp18Yjc42vw&s", "https://static.toiimg.com/thumb/msid-112726543,width-400,resizemode-4/112726543.jpg"],
         description: 'Popular shopping destinations and markets'
       },
       {
-        title: 'Hotels Location',
+        title: 'Hotel',
         images: ["https://media.istockphoto.com/id/472899538/photo/downtown-cleveland-hotel-entrance-and-waiting-taxi-cab.jpg?s=612x612&w=0&k=20&c=rz-WSe_6gKfkID6EL9yxCdN_UIMkXUBsr67884j-X9o=", "https://cf.bstatic.com/xdata/images/hotel/max1024x768/620719916.webp?k=616cefe723433fd501f4fe89c7f415ce49822b10d769c7a725f8e35b39be66af&o=", "https://i.ytimg.com/vi/YaTV7vB1P-k/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLBj6FqyJDqfIPjG-qR-w0J6zsPUhQ", "https://media.istockphoto.com/id/104731717/photo/luxury-resort.jpg?s=612x612&w=0&k=20&c=cODMSPbYyrn1FHake1xYz9M8r15iOfGz9Aosy9Db7mI="],
         description: 'Comfortable stays for every budget'
       },
       {
-        title: 'Restaurants',
+        title: 'Restaurant',
         images: ["https://www.milagrocorp.com/wp-content/uploads/2021/11/Maintaining-Your-Restaurants-Exterior.webp", "https://images.nanawall.com/blog/2023-06/Benefits_of_Outdoor_Seating_Blog-1.jpg?auto=format&sharp=20&fit=max"," https://i.pinimg.com/736x/4d/af/aa/4dafaab409cd3a3f43beca2c60f7fb66.jpg", "https://www.milagrocorp.com/wp-content/uploads/2021/11/Maintaining-Your-Restaurants-Exterior.webp", "https://images.nanawall.com/blog/2023-06/Benefits_of_Outdoor_Seating_Blog-1.jpg?auto=format&sharp=20&fit=max", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ_dYIgcrRO5C5KcFlhvJl6QPckupkFSQq1FA&s"],
         description: 'Best dining experiences in town'
       },
