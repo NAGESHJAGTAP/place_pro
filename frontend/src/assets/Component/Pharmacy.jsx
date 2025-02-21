@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Search, MapPin, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -29,38 +29,38 @@ const pharmacies = [
     name: 'MediCare Pharmacy',
     distance: '1.5 km',
     support: '24/7 Support',
-    image: 'https://images.unsplash.com/photo-1589652717406-1c69efaf1ff1'
+    image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
   },
   {
-    id: 2,
+    id: 5,
     name: 'HealthPlus Pharmacy',
     distance: '1.0 km',
     support: '24/7 Support',
     image: 'https://images.unsplash.com/photo-1576091160501-bbe57469278b'
   },
   {
-    id: 2,
+    id: 6,
     name: 'HealthPlus Pharmacy',
     distance: '1.0 km',
     support: '24/7 Support',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
   },
   {
-    id: 2,
+    id: 7,
     name: 'HealthPlus Pharmacy',
     distance: '1.0 km',
     support: '24/7 Support',
     image: 'https://images.unsplash.com/photo-1576091160550-2173dba999ef'
   },
   {
-    id: 2,
+    id: 8,
     name: 'HealthPlus Pharmacy',
     distance: '1.0 km',
     support: '24/7 Support',
     image: 'https://images.unsplash.com/photo-1576091160501-bbe57469278b'
   },
   {
-    id: 2,
+    id: 9,
     name: 'HealthPlus Pharmacy',
     distance: '1.0 km',
     support: '24/7 Support',
@@ -70,6 +70,31 @@ const pharmacies = [
 
 const Pharmacy = () => {
   const [searchQuery, setSearchQuery] = useState('');
+  const [location, setLocation] = useState('Find your location...');
+
+  useEffect(() => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        async (position) => {
+          const { latitude, longitude } = position.coords;
+          try {
+            const response = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?lat=${latitude}&lon=${longitude}&format=json`
+            );
+            const data = await response.json();
+            setLocation(data.address.city || data.address.village || 'Unknown Location');
+          } catch (error) {
+            setLocation('Location not found');
+          }
+        },
+        () => {
+          setLocation('Location access denied');
+        }
+      );
+    } else {
+      setLocation('Geolocation not supported');
+    }
+  }, []);
   
   return (
     <div className="min-h-screen bg-gray-50">
@@ -84,7 +109,7 @@ const Pharmacy = () => {
         </div>
         <div className="relative container mx-auto px-4 py-20">
           <h2 className="text-4xl font-bold text-green-700 mb-4">
-            Discover the Best Pharmacy in [Village/City Name]
+            Discover the Best Pharmacy in {location}
           </h2>
           <p className="text-gray-600 mb-8">
             Find nearby pharmacies easily.
