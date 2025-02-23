@@ -1,23 +1,79 @@
-const express = require('express');
+
+const express = require("express");
 const router = express.Router();
-const hospitalController = require('../controllers/hospitalController');
+const multer = require("multer");
+const path = require("path");
+const Hospital = require("../models/hospitalModel");
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/"); 
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname)); 
+  },
+});
+const upload = multer({ storage });
+router.post("/hospitals", upload.single("image"), async (req, res) => {
+  try {
+    console.log("Received Data:", req.body);
+    
+    const {
+      name,
+      address,
+      city,
+      state,
+      zip,
+      phone,
+      email,
+      website,
+      openingHours,
+      specialties,
+      facilities,
+      latitude,
+      longitude,
+    } = req.body;
 
-// GET: Retrieve all hospitals
-router.get('/hospitals', hospitalController.getAllHospitals);
+  
+    if (!name || !address || !city || !state || !zip || !phone || !email || !website || !openingHours || !latitude || !longitude) {
+      return res.status(400).json({ message: " All fields are required!" });
+    }
+    const imagePath = req.file ? `/uploads/${req.file.filename}` : "";
 
-// GET: Retrieve a specific hospital by name
-router.get('/hospitals/:name', hospitalController.getHospitalByName);
+    const hospital = new Hospital({
+      name,
+      address,
+      city,
+      state,
+      zip,
+      phone,
+      email,
+      website,
+      openingHours,
+      specialties: Array.isArray(specialties) ? specialties : [],
+      facilities: Array.isArray(facilities) ? facilities : [],
+      latitude,
+      longitude,
+      image: imagePath, 
+    });
+    await hospital.save();
 
-// POST: Add a new hospital
-router.post('/hospitals', hospitalController.addHospital);
+    res.status(201).json({ message: " Hospital added successfully!", hospital });
+  } catch (error) {
+    console.error(" Error adding hospital:", error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+router.get("/hospitals", async (req, res) => {
+  try {
+    console.log("Fetching hospitals from DB...");
+    const hospitals = await Hospital.find();
+    console.log(" Hospitals retrieved:", hospitals.length);
 
-// PUT: Replace a hospital by name
-router.put('/hospitals/:name', hospitalController.updateHospital);
-
-// PATCH: Update specific fields of a hospital
-router.patch('/hospitals/:name', hospitalController.updateHospitalFields);
-
-// DELETE: Remove a hospital by name
-router.delete('/hospitals/:name', hospitalController.deleteHospital);
+    res.json(hospitals);
+  } catch (error) {
+    console.error(" Error fetching hospitals:", error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
 
 module.exports = router;
