@@ -1,22 +1,47 @@
-require('dotenv').config();
+// const mongoose = require("mongoose");
 
-// Access variables using process.env
-const uri = process.env.MONGODB_URI;
-const dbName = process.env.DB_NAME;
-const collectionName = process.env.HOSPITAL_COLLECTION;
-const port = process.env.PORT || 3000;
+// const connectDB = async () => {
+//   try {
+//     await mongoose.connect("mongodb+srv://test:test123@cluster0.kwbnz.mongodb.net/project", {
+//       serverSelectionTimeoutMS: 10000, 
+//       socketTimeoutMS: 45000, 
+//     });
 
-const express = require('express');
-const { MongoClient } = require('mongodb');
-const app = express();
+//     console.log("MongoDB Connected Successfully!");
+//   } catch (error) {
+//     console.error(" MongoDB Connection Error:", error.message);
+//     process.exit(1);  
+//   }
+// };
 
-app.use(express.json());
+// module.exports = { connectDB };
 
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 
-// Database connection and routes as before...
+const mongoose = require("mongoose");
 
-// Start the server
-app.listen(port, () => {
-    console.log(`Server is running on http://localhost:${port}`);
-});
+let db;
+
+const connectDB = async () => {
+  try {
+    const connection = await mongoose.connect("mongodb+srv://test:test123@cluster0.kwbnz.mongodb.net/project", {
+      serverSelectionTimeoutMS: 10000,
+      socketTimeoutMS: 45000,
+    });
+
+    db = connection.connection.db;  // Store the DB connection
+
+    console.log("MongoDB Connected Successfully!");
+  } catch (error) {
+    console.error("MongoDB Connection Error:", error.message);
+    process.exit(1);
+  }
+};
+
+const getDB = () => {
+  if (!db) {
+    throw new Error("Database not initialized!");
+  }
+  return db;
+};
+
+module.exports = { connectDB, getDB };
