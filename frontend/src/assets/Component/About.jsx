@@ -227,52 +227,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* Meet the Team */}
-      {/* <div className="container mx-auto py-20 px-6">
-        <h2 className="text-4xl font-bold text-center mb-16 text-gray-900">
-          Meet Our Team
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {teamMembers.map((member, index) => (
-            <motion.div
-              key={index}
-              whileHover={{ scale: 1.05 }}
-              className="bg-white rounded-xl shadow-lg overflow-hidden"
-            >
-              <img
-                src={member.image}
-                alt={member.name}
-                className="w-full h-64 object-cover"
-              />
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-1 text-gray-800">
-                  {member.name}
-                </h3>
-                <p className="text-orange-500 font-medium mb-3">{member.role}</p>
-                <p className="text-gray-600">{member.bio}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-    
-      <div className="bg-gradient-to-r from-orange-500 to-orange-600 py-16 px-6">
-        <div className="container mx-auto text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">
-            Join Our Travel Revolution
-          </h2>
-          <p className="text-white text-lg mb-8 max-w-2xl mx-auto">
-            Be part of the next generation of smart, responsible travel.
-          </p>
-          <motion.button
-            whileHover={{ scale: 1.05 }}
-            className="bg-white text-orange-500 px-8 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition-all shadow-lg"
-          >
-            Download The App
-          </motion.button>
-        </div>
-      </div> */}
+   
     </div>
   );
 };
