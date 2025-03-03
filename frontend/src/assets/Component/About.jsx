@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { MapPin, Star, Globe, Shield, Zap, Heart } from "lucide-react";
@@ -133,8 +132,6 @@ const About = () => {
           </div>
         </div>
       </div>
-
-
     </div>
   );
 };
