@@ -24,9 +24,9 @@ const Hospitaldetails = () => {
   });
 
   const hospitalInfo = {
-    name: "Central City Hospital",
+    name: "Sunshine Multi-Specialty Hospital",
     type: "Multi-Specialty Hospital",
-    address: "123 Medical Center Drive, Manhattan, NY, 10001",
+    address: "Sunshine Multi-Specialty Hospital Vadodara, Gujarat 390011",
     phone: "+91 8155814237",
     emergencyPhone: "+1 (555) 911-0000",
     email: "contact@centralcityhospital.com",
@@ -133,8 +133,6 @@ const Hospitaldetails = () => {
           </button>
         </div>
       </div>
-
-      {/* Tabs */}
       <div className="flex justify-center mb-6">
         {['Doctors', 'Departments', 'Parking & Transport'].map((tab, index) => (
           <button
@@ -150,8 +148,6 @@ const Hospitaldetails = () => {
           </button>
         ))}
       </div>
-
-      {/* Tab Content */}
       <div className="bg-white shadow-md rounded-lg p-6">
         {tabValue === 0 && (
           <div>
@@ -181,7 +177,6 @@ const Hospitaldetails = () => {
             ))}
           </div>
         )}
-
         {tabValue === 2 && (
           <div>
             <h3 className="text-xl font-semibold mb-4">Parking & Transport</h3>
@@ -208,13 +203,10 @@ const Hospitaldetails = () => {
           </div>
         )}
       </div>
-
-   
       <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-6 flex items-center">
         <AlertTriangle className="w-6 h-6 mr-3" />
         <span>For medical emergencies, call: {hospitalInfo.emergencyPhone}</span>
       </div>
-
       {openContactModal && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg w-96">
