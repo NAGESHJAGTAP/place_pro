@@ -27,7 +27,7 @@ exports.addHospital = async (req, res) => {
     await hospital.save();
     res.status(201).json({ message: "Hospital added successfully", hospital });
   } catch (error) {
-    console.error("🔥 Error:", error);
+    console.error(" Error:", error);
     res.status(500).json({ message: "Error adding hospital", error: error.message });
   }
 };

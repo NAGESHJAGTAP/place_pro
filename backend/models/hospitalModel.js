@@ -1,20 +1,31 @@
 const mongoose = require("mongoose");
 
 const HospitalSchema = new mongoose.Schema({
-  name: { type: String, required: true },
-  address: { type: String, required: true },
-  city: { type: String, required: true },
-  state: { type: String, required: true },
-  zip: { type: String, required: true },
-  phone: { type: String, required: true },
-  email: { type: String, required: true, unique: true },
-  website: { type: String, required: true },
-  openingHours: { type: String, required: true },
-  specialties: { type: [String], required: true },  
-  facilities: { type: [String], required: true },  
-  latitude: { type: String, required: true },
-  longitude: { type: String, required: true },
-  image: { type: String },
+  name: String,
+  type: String,
+  address: String,
+  phone: String,
+  emergencyPhone: String,
+  email: String,
+  hours: {
+    weekday: String,
+    weekend: String,
+    emergency: String
+  },
+  doctors: [
+    { name: String, specialty: String, schedule: String }
+  ],
+  departments: [String],
+  parking: {
+    visitor: String,
+    emergency: String,
+    rates: String
+  },
+  transport: {
+    bus: [String],
+    subway: [String],
+    accessibility: String
+  }
 });
-const Hospital = mongoose.model("Hospital", HospitalSchema);
-module.exports = Hospital;
+
+module.exports = mongoose.model("Hospital", HospitalSchema);

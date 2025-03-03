@@ -76,4 +76,17 @@ router.get("/hospitals", async (req, res) => {
   }
 });
 
+router.get("/hospitals/:id", async (req, res) => {
+  try {
+    console.log("Fetching hospitals from DB...");
+    const hospitals = await Hospital.find();
+    console.log(" Hospitals retrieved:", hospitals.length);
+
+    res.json(hospitals);
+  } catch (error) {
+    console.error(" Error fetching hospitals:", error.message);
+    res.status(500).json({ error: error.message });
+  }
+});
+
 module.exports = router;
