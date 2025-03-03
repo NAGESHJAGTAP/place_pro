@@ -1,5 +1,4 @@
 import React from 'react';
-
 const Contact = () => {
   return (
     <div className="font-sans text-gray-800">
@@ -11,7 +10,6 @@ const Contact = () => {
           </p>
         </div>
       </section>
-
       <section className="py-10 px-4 md:px-6 lg:px-8">
         <div className="max-w-lg mx-auto bg-white rounded-xl shadow-xl p-6 md:p-8 border-t-4 border-orange-600 hover:shadow-2xl transition-all">
           <h2 className="text-3xl font-semibold text-center mb-6 text-orange-600">Get in Touch</h2>
@@ -61,7 +59,6 @@ const Contact = () => {
           </form>
         </div>
       </section>
-
       <section className="py-6 bg-gray-100 text-center">
         <div className="max-w-3xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="p-4 bg-white rounded-lg shadow-md hover:shadow-lg">
@@ -78,7 +75,6 @@ const Contact = () => {
           </div>
         </div>
       </section>
-
       <section className="py-10 px-4 md:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-6 text-orange-600">Why Contact Us?</h2>
