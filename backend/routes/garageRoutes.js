@@ -1,12 +1,22 @@
-const express = require('express');
-const router = express.Router();
-const garageController = require('../Controllers/garageController');
+const express = require("express");
+const multer = require("multer");
+const { addGarage, getGarages } = require("../Controllers/garageController");
 
-router.get('/garages', garageController.getAllGarages);
-router.get('/garages/:name', garageController.getGarageByName);
-router.post('/garages', garageController.addGarage);
-router.put('/garages/:name', garageController.updateGarage);
-router.patch('/garages/:name', garageController.updateGarageFields);
-router.delete('/garages/:name', garageController.deleteGarage);
+const router = express.Router();
+
+
+const storage = multer.diskStorage({
+  destination: (req, file, cb) => {
+    cb(null, "uploads/");
+  },
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + "-" + file.originalname);
+  },
+});
+const upload = multer({ storage });
+
+
+router.post("/garages", upload.single("image"), addGarage);
+router.get("/garages", getGarages);
 
 module.exports = router;
