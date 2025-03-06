@@ -1,6 +1,5 @@
 import { useState } from "react";
 import axios from "axios";
-
 const AddPharmacy = () => {
   const [pharmacy, setPharmacy] = useState({
     name: "",
