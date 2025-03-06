@@ -1,64 +1,44 @@
-const { MongoClient } = require('mongodb');
-const uri = "mongodb+srv://test:test123@cluster0.kwbnz.mongodb.net/";
-const dbName = "project";
-const collectionName = "pharmacies";
+// const mongoose = require("mongoose");
 
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
+// const PharmacySchema = new mongoose.Schema({
+//   name: { type: String, required: true },
+//   address: { type: String, required: true },
+//   city: { type: String, required: true },
+//   state: { type: String, required: true },
+//   zip: { type: String, required: true },
+//   phone: { type: String, required: true },
+//   email: { type: String, required: true },
+//   website: { type: String },
+//   openingHours: { type: String },
+//   services: { type: [String] }, 
+//   latitude: { type: String, required: true },
+//   longitude: { type: String, required: true },
+//   image: { type: String }, 
+// });
 
-async function connectToDatabase() {
-    try {
-        if (!client.topology || !client.topology.isConnected()) {
-            await client.connect();
-            console.log('Connected to MongoDB');
-        }
-        return client.db(dbName).collection(collectionName);
-    } catch (error) {
-        console.error('MongoDB Connection Error:', error);
-        throw error;
-    }
-}
+// module.exports = mongoose.model("Pharmacy", PharmacySchema);
 
-// Fetch all pharmacies
-async function getAllPharmacies() {
-    const collection = await connectToDatabase();
-    return collection.find({}).toArray();
-}
 
-// Fetch pharmacy by name
-async function getPharmacyByName(name) {
-    const collection = await connectToDatabase();
-    return collection.findOne({ name });
-}
 
-// Add a new pharmacy
-async function addPharmacy(pharmacyData) {
-    const collection = await connectToDatabase();
-    return collection.insertOne(pharmacyData);
-}
 
-// Update pharmacy by name
-async function updatePharmacy(name, updatedData) {
-    const collection = await connectToDatabase();
-    return collection.replaceOne({ name }, updatedData);
-}
 
-// Update specific fields of a pharmacy
-async function updatePharmacyFields(name, updatedData) {
-    const collection = await connectToDatabase();
-    return collection.updateOne({ name }, { $set: updatedData });
-}
 
-// Delete pharmacy by name
-async function deletePharmacy(name) {
-    const collection = await connectToDatabase();
-    return collection.deleteOne({ name });
-}
+const mongoose = require("mongoose");
 
-module.exports = {
-    getAllPharmacies,
-    getPharmacyByName,
-    addPharmacy,
-    updatePharmacy,
-    updatePharmacyFields,
-    deletePharmacy
-};
+const PharmacySchema = new mongoose.Schema({
+  name: { type: String, required: true },
+  address: { type: String, required: true },
+  city: { type: String, required: true },
+  state: { type: String, required: true },
+  zip: { type: String, required: true },
+  phone: { type: String, required: true },
+  email: { type: String, required: true },
+  website: { type: String },
+  openingHours: { type: String },
+  services: { type: [String], default: [] },
+  latitude: { type: Number, required: true }, // Changed to Number
+  longitude: { type: Number, required: true }, // Changed to Number
+  image: { type: String },
+});
+
+module.exports = mongoose.model("Pharmacy", PharmacySchema);
