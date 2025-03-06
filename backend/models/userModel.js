@@ -1,6 +1,6 @@
 const { getDB } = require('../config/db');
 
-const collectionName = 'users'; 
+const collectionName = 'users';
 
 const createUser = async (user) => {
   const db = getDB();
